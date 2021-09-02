@@ -1,5 +1,5 @@
-# Stack implementation using Array
-# Author: Yuan
+# Stack using Array
+# Author: Y.
 
 # Create a stack class
 class Stack(object):
@@ -18,9 +18,6 @@ class Stack(object):
     
     # Push data to Stack
     def push(self, item):
-        if len(self.stack) >= self.limit:
-            print("StackOverflowError")
-            pass
         self.stack.append(item)
 
     # Pop data from Stack

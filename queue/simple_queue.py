@@ -1,5 +1,5 @@
-# Queue implementation using Array
-# Author: Yuan
+# Simple queue using Array
+# Author: Y.
 
 # Create a queue class
 class Queue(object):

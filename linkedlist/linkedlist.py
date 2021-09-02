@@ -224,12 +224,12 @@ class DoubleLinkedList(object):
         self._head = prev
 
 
-# Create a Cercular Linked List class
-class CercularLinkedList(object):
+# Create a Circular Linked List class
+class CircularLinkedList(object):
 
     # Create a empty linked list
     def __init__(self):
-        super(CercularLinkedList, self).__init__()
+        super(CircularLinkedList, self).__init__()
         self._head = None
         self._tail = None
         self._size = 0
@@ -414,7 +414,7 @@ if __name__ == "__main__":
     # Test for Cercular Linked List
     print("\n====== Test for Cercular Linked List ======")
     
-    cll = CercularLinkedList()
+    cll = CircularLinkedList()
     print("size:", cll.size())
     print(cll.is_empty())
 
