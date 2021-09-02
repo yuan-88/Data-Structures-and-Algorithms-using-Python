@@ -1,12 +1,13 @@
-# Binary Search Tree implementation
+# Binary Search Tree including functions of DFS, BFS
 # Author: Y.
 
-# Define a tree node class
+# Define node class for binary search tree
 class Node(object):    
     def __init__(self, item=None):
         self.item = item
         self.left = None
         self.right = None
+
 
 # Create binary search tree
 class BinarySearchTree(object):
