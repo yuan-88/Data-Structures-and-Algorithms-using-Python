@@ -74,7 +74,8 @@ class AVLTree(object):
     
     # Exchange parent node and right child node
     def left_rotate(self, node):
-        """
+        """ Left rotatioin
+
         Args
             node: current parent node
         
@@ -96,7 +97,8 @@ class AVLTree(object):
     
     # Exchange parent node and left child 
     def right_rotate(self, node):
-        """
+        """ Right rotation
+
         Args
             node: current parent node
         
@@ -132,6 +134,36 @@ class AVLTree(object):
             if node.right is not None:
                 queue.append(node.right)
 
+    # Depth First Search(DFS)   
+    # DFS: Preorder (Root -> Left -> Right)
+    def preorder(self, root='root'):
+        if root == 'root':
+            root = self._root
+        if root == None:
+            return
+        print(root.item, end=' ')
+        self.preorder(root.left)
+        self.preorder(root.right)
+
+    # DFS: Inorder (Left -> Root -> Right)
+    def inorder(self, root='root'):
+        if root == 'root':
+            root = self._root
+        if root == None:
+            return
+        self.inorder(root.left)
+        print(root.item, end=' ')        
+        self.inorder(root.right)
+    
+    # DFS: Postorder (Left -> Right -> Root)
+    def postorder(self, root='root'):
+        if root == 'root':
+            root = self._root
+        if root == None:
+            return
+        self.postorder(root.left)
+        self.postorder(root.right) 
+        print(root.item, end=' ')
 
 if __name__=="__main__":
 
@@ -140,9 +172,20 @@ if __name__=="__main__":
     nums = [33, 13, 52, 9, 21, 61, 8, 11, 10, 15]
     for num in nums:
         root = tree.add(item=num)
-        print(tree.bfs())
+
+    print("\n[preorder]")
+    print(tree.preorder())
+
+    print("\n[inorder]")
+    print(tree.inorder())
+
+    print("\n[postorder]")
+    print(tree.postorder())
+
+    print("\n[Breadth First Search]")
+    print(tree.bfs())
     
-    print(root.item, root.left.item, root.right.item)
-    print(root.left.left.item, root.left.right.item)
-    print(root.left.left.left.item, root.left.left.right.item)
-    print(root.right.right.item)
+    print("\n[Root, left, right] ", root.item, root.left.item, root.right.item)
+    print("[left.left, left.right] ", root.left.left.item, root.left.right.item)
+    print("[left.left.left, left.left.right] ", root.left.left.left.item, root.left.left.right.item)
+    print("[right.right.right] ", root.right.right.item)

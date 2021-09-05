@@ -102,6 +102,30 @@ class BinaryTree(object):
         
         return False
     
+    # Check if a tree is complete using number of nodes and index
+    # All the levels are completely filled except possibly the lowest one, which is filled from the left
+    # Get numbers of nodes
+    def count_nodes(self, root='root'):
+        if root is None:
+            return 0
+        return 1 + self.count_nodes(root.left) + self.count_nodes(root.right)
+
+    # Check if it is a complete tree
+    def is_complete_tree(self, root='root', index=0, num_nodes=0):
+        if root == 'root':
+            root = self._root
+            num_nodes = self.count_nodes(root)
+        
+        if root is None:
+            return True
+        
+        if index >= num_nodes:
+            return False
+        
+        return self.is_complete_tree(root.left, 2 * index + 1, num_nodes) \
+            and self.is_complete_tree(root.right, 2 * index + 2, num_nodes)
+    
+
     # Check if a tree is perfect using depth of tree and level
     # Every internal node has exactly two child nodes and all the leaf nodes are at the same level
     # Get depth of a tree
@@ -130,29 +154,6 @@ class BinaryTree(object):
             return self.is_perfect_tree(root.left, d, level+1) and self.is_perfect_tree(root.right, d, level+1)
         
         return False
-    
-    # Check if a tree is complete using number of nodes and index
-    # All the levels are completely filled except possibly the lowest one, which is filled from the left
-    # Get numbers of nodes
-    def count_nodes(self, root='root'):
-        if root is None:
-            return 0
-        return 1 + self.count_nodes(root.left) + self.count_nodes(root.right)
-
-    # Check if it is a complete tree
-    def is_complete_tree(self, root='root', index=0, num_nodes=0):
-        if root == 'root':
-            root = self._root
-            num_nodes = self.count_nodes(root)
-        
-        if root is None:
-            return True
-        
-        if index >= num_nodes:
-            return False
-        
-        return self.is_complete_tree(root.left, 2 * index + 1, num_nodes) \
-            and self.is_complete_tree(root.right, 2 * index + 2, num_nodes)
 
     # Check if the tree is balanced using height
     # The height of the left and right subtree of any node differ by not more than 1

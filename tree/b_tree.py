@@ -16,7 +16,7 @@ class BTree(object):
         self._root = BTreeNode(is_leaf=True)
         self._t = t
     
-    # =============== INSERT PROCESS =============== #
+# =============== INSERT PROCESS =============== #
     # Split root if root is full, otherwise, search from root
     def insert_key(self, key):
         # If root is full, then split root
@@ -86,7 +86,7 @@ class BTree(object):
             # Add left half of y's child (y.child[0:t]) to y
             y.child = y.child[0:t]
 
-    # =============== SEARCH PROCESS =============== #
+# =============== SEARCH PROCESS =============== #
     # Search key
     def search_key(self, x, key):
         if x is not None:
@@ -104,7 +104,7 @@ class BTree(object):
         else:
             self.search_key(self._root, key)
 
-    # =============== PRINT PROCESS =============== #
+# =============== PRINT PROCESS =============== #
     # Print out tree
     def print_tree(self, x, level=0):
         print(f'level: {level}, # keys: {len(x.keys)}, keys:', end=' ')
@@ -116,7 +116,7 @@ class BTree(object):
             for child in x.child:
                 self.print_tree(child, level)
 
-    # =============== DELETE PROCESS =============== #
+# =============== DELETE PROCESS =============== #
     # Delete a key
     def delete_key(self, x, key):
         t = self._t

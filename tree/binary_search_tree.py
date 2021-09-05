@@ -116,5 +116,3 @@ if __name__=="__main__":
     print("\n[Breadth First Search]")
     print(bst.bfs())
     print(bst.bfs(bst._root.left))
-
-    print(bst._root.item, bst._root.left.item, bst._root.right.item, bst._root.right.left.item, bst._root.right.right.item)
