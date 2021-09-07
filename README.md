@@ -45,16 +45,17 @@
     + Binary Search (done)
 
 - Sort
-    + Select sort
-    + Insert sort
-    + Bubble sort
-    + Shell sort
-    + Merge sort
-    + Quick sort
+    + Select sort (done)
+    + Insert sort (done)
+    + Bubble sort (done)
+    + Shell sort (done)
+    + Merge sort (done)
+    + Quick sort (done)
     + Heap sort (done)
-    + Count sort
-    + Bucket sort
-    + Redix sort
+    + Count sort (done)
+    + Redix sort (done)
+    + Bucket sort (done)
+    
 
 - Greedy algorithm
 
